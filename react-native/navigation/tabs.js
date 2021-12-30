@@ -3,19 +3,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { COLORS, icons } from '../constants';
 
-import { Home, SumaryScreen, ControlScreen } from '../screens';
-import { Image, View } from 'react-native';
+import { Home, ControlScreen } from '../screens';
+import { Image } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
 const TabIcon = ({ focused, icon }) => {
   return (
-    // <View
-    //   style={{
-    //     alignItems: 'center',
-    //     justifyContent: 'center',
-    //   }}
-    // >
     <Image
       source={icon}
       resizeMode='contain'
@@ -25,21 +19,6 @@ const TabIcon = ({ focused, icon }) => {
         tintColor: focused ? COLORS.primary : COLORS.gray,
       }}
     />
-    //   {focused && (
-    //     <View
-    //       style={{
-    //         position: 'absolute',
-    //         height: 3,
-    //         left: 0,
-    //         right: 0,
-    //         bottom: 0,
-    //         borderTopLeftRadius: 5,
-    //         borderTopRightRadius: 5,
-    //         backgroundColor: COLORS.darkGreen,
-    //       }}
-    //     />
-    //   )}
-    // </View>
   );
 };
 

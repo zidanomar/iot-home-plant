@@ -50,6 +50,7 @@ const RequirementBar = ({ icon, barPrecentage }) => {
             bottom: 0,
             left: 0,
             width: barPrecentage,
+            maxWidth: '100%',
             height: 3,
             marginTop: SIZES.base,
             backgroundColor: COLORS.primary,
@@ -72,15 +73,21 @@ const renderRequirementBar = (plantDetail) => {
     >
       <RequirementBar
         icon={icons.garden}
-        barPrecentage={`${plantDetail.moisture}%`}
+        barPrecentage={
+          plantDetail.moisture > 100 ? '100%' : plantDetail.moisture + '%'
+        }
       />
       <RequirementBar
         icon={icons.temperature}
-        barPrecentage={`${plantDetail.temperature}%`}
+        barPrecentage={
+          plantDetail.temperature > 100 ? '100%' : plantDetail.temperature + '%'
+        }
       />
       <RequirementBar
         icon={icons.drop}
-        barPrecentage={`${plantDetail.humidity}%`}
+        barPrecentage={
+          plantDetail.humidity > 100 ? '100%' : plantDetail.humidity + '%'
+        }
       />
     </View>
   );
